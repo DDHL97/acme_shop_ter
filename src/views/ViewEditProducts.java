@@ -35,6 +35,10 @@ public class ViewEditProducts extends javax.swing.JPanel {
         jtf_precioComprae = new javax.swing.JTextField();
         jtf_precioVentae = new javax.swing.JTextField();
         jtf_existenciase = new javax.swing.JTextField();
+        jtf_stocke = new javax.swing.JTextField();
+        id_dscuento = new javax.swing.JLabel();
+        jtf_descuentoe = new javax.swing.JTextField();
+        jl_stock = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -50,7 +54,7 @@ public class ViewEditProducts extends javax.swing.JPanel {
         jta_descripcione.setRows(5);
         jta_descripcione.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(jta_descripcione);
-        jta_descripcione.setBounds(220, 260, 380, 208);
+        jta_descripcione.setBounds(190, 300, 400, 100);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Datos del producto");
@@ -67,8 +71,13 @@ public class ViewEditProducts extends javax.swing.JPanel {
         jbtn_back.setBounds(50, 50, 50, 50);
 
         jtf_idProductoe.setEditable(false);
+        jtf_idProductoe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtf_idProductoeActionPerformed(evt);
+            }
+        });
         add(jtf_idProductoe);
-        jtf_idProductoe.setBounds(260, 90, 43, 20);
+        jtf_idProductoe.setBounds(280, 90, 43, 20);
 
         jtf_productoe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,8 +90,22 @@ public class ViewEditProducts extends javax.swing.JPanel {
         jtf_precioComprae.setBounds(520, 80, 56, 20);
         add(jtf_precioVentae);
         jtf_precioVentae.setBounds(520, 140, 56, 20);
+
+        jtf_existenciase.setEditable(false);
         add(jtf_existenciase);
-        jtf_existenciase.setBounds(420, 190, 53, 20);
+        jtf_existenciase.setBounds(520, 200, 53, 20);
+        add(jtf_stocke);
+        jtf_stocke.setBounds(490, 260, 90, 20);
+
+        id_dscuento.setText("id_descuento");
+        add(id_dscuento);
+        id_dscuento.setBounds(190, 200, 90, 14);
+        add(jtf_descuentoe);
+        jtf_descuentoe.setBounds(270, 200, 60, 20);
+
+        jl_stock.setText("Fecha de ingreso:");
+        add(jl_stock);
+        jl_stock.setBounds(370, 260, 130, 14);
 
         jLabel2.setText("id_producto:");
         add(jLabel2);
@@ -94,7 +117,7 @@ public class ViewEditProducts extends javax.swing.JPanel {
 
         jLabel4.setText("Descripcion");
         add(jLabel4);
-        jLabel4.setBounds(220, 240, 110, 14);
+        jLabel4.setBounds(190, 270, 110, 14);
 
         jLabel5.setText("Precio Compra");
         add(jLabel5);
@@ -106,7 +129,7 @@ public class ViewEditProducts extends javax.swing.JPanel {
 
         jLabel7.setText("Existencias");
         add(jLabel7);
-        jLabel7.setBounds(340, 200, 80, 14);
+        jLabel7.setBounds(420, 200, 80, 14);
 
         jbtn_savee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar.png"))); // NOI18N
         jbtn_savee.setBorder(null);
@@ -134,8 +157,13 @@ public class ViewEditProducts extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtn_saveeActionPerformed
 
+    private void jtf_idProductoeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_idProductoeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtf_idProductoeActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JLabel id_dscuento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -146,11 +174,14 @@ public class ViewEditProducts extends javax.swing.JPanel {
     public javax.swing.JLabel jLabel9;
     public javax.swing.JButton jbtn_back;
     public javax.swing.JButton jbtn_savee;
+    public javax.swing.JLabel jl_stock;
     public javax.swing.JTextArea jta_descripcione;
+    public javax.swing.JTextField jtf_descuentoe;
     public javax.swing.JTextField jtf_existenciase;
     public javax.swing.JTextField jtf_idProductoe;
     public javax.swing.JTextField jtf_precioComprae;
     public javax.swing.JTextField jtf_precioVentae;
     public javax.swing.JTextField jtf_productoe;
+    public javax.swing.JTextField jtf_stocke;
     // End of variables declaration//GEN-END:variables
 }

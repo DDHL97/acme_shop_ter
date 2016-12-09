@@ -70,7 +70,7 @@ public class ViewProducts extends javax.swing.JFrame {
             }
         });
         jp_BackGround.add(jbtn_borrar);
-        jbtn_borrar.setBounds(70, 350, 80, 80);
+        jbtn_borrar.setBounds(80, 350, 80, 80);
 
         jbtn_edit.setFont(new java.awt.Font("BankGothic Md BT", 0, 11)); // NOI18N
         jbtn_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit-validated_40458.png"))); // NOI18N
@@ -86,7 +86,7 @@ public class ViewProducts extends javax.swing.JFrame {
             }
         });
         jp_BackGround.add(jbtn_edit);
-        jbtn_edit.setBounds(180, 350, 80, 80);
+        jbtn_edit.setBounds(240, 350, 80, 80);
 
         jbtn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/regresar.png"))); // NOI18N
         jbtn_back.setBorder(null);
@@ -111,23 +111,24 @@ public class ViewProducts extends javax.swing.JFrame {
         jbtn_actualizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jbtn_actualizar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jp_BackGround.add(jbtn_actualizar);
-        jbtn_actualizar.setBounds(300, 350, 80, 80);
+        jbtn_actualizar.setBounds(390, 350, 80, 80);
 
         jt_productos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Productos", "Descripción", "Precio Venta", "Precio Compra", "Existencia"
+                "ID", "Productos", "Descripción", "Precio Compra", "Precio Venta", "Existencias", "Stock", "Descuento", "Precio con Descuento"
             }
         ));
+        jt_productos.setSurrendersFocusOnKeystroke(true);
         jScrollPane1.setViewportView(jt_productos);
 
         jp_BackGround.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 140, 470, 190);
+        jScrollPane1.setBounds(20, 140, 740, 190);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/products.jpg"))); // NOI18N
         jp_BackGround.add(jLabel2);
@@ -212,6 +213,8 @@ public class ViewProducts extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ViewProducts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

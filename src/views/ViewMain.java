@@ -29,6 +29,10 @@ public class ViewMain extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuBar1 = new javax.swing.JMenuBar();
+        jm_inicio = new javax.swing.JMenu();
+        jmi_InSe = new javax.swing.JMenuItem();
+        jmi_regUsu = new javax.swing.JMenuItem();
+        jmi_exit = new javax.swing.JMenuItem();
         jm_suppliers = new javax.swing.JMenu();
         jmi_suppliers = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -47,6 +51,19 @@ public class ViewMain extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jm_inicio.setText("Inicio");
+
+        jmi_InSe.setText("Iniciar Sesion");
+        jm_inicio.add(jmi_InSe);
+
+        jmi_regUsu.setText("Registrar Usuarios");
+        jm_inicio.add(jmi_regUsu);
+
+        jmi_exit.setText("Salir");
+        jm_inicio.add(jmi_exit);
+
+        jMenuBar1.add(jm_inicio);
 
         jm_suppliers.setText("Proveedores");
 
@@ -173,14 +190,18 @@ public class ViewMain extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    public javax.swing.JMenu jm_inicio;
     public javax.swing.JMenu jm_products;
     public javax.swing.JMenu jm_reports;
     public javax.swing.JMenu jm_sales;
-    private javax.swing.JMenu jm_suppliers;
+    public javax.swing.JMenu jm_suppliers;
     public javax.swing.JMenuItem jmi_Customers;
+    public javax.swing.JMenuItem jmi_InSe;
     public javax.swing.JMenuItem jmi_customersReport;
+    public javax.swing.JMenuItem jmi_exit;
     public javax.swing.JMenuItem jmi_products;
     public javax.swing.JMenuItem jmi_productsReport;
+    public javax.swing.JMenuItem jmi_regUsu;
     public javax.swing.JMenuItem jmi_sales;
     public javax.swing.JMenuItem jmi_salesReport;
     public javax.swing.JMenuItem jmi_shopping;

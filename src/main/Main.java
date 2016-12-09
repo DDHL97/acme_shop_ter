@@ -36,6 +36,14 @@ public class Main {
     private static ViewNewProducts viewNewProducts;
     private static ControllerNewProducts controlNewProducts;
     
+    private static ViewIniciarSesion vInSe;
+    private static ModelInSe mInSe;
+    private static ControllerInSe cInSe;
+    
+    private static ViewNew vRegNew;
+    private static ModelNew mRegNew;
+    private static ControllerNew cRegNew;
+    
     
     public static void main(String[] DDR) {
         
@@ -93,18 +101,27 @@ public class Main {
         views[0] = viewNewCustomer;
         views[1] = viewEditCustomer;
         
+
+        ViewIniciarSesion vInSe= new ViewIniciarSesion();
+        ControllerInSe cInSe = new ControllerInSe(mInSe, vInSe);
+        
+        ViewNew vRegNew = new ViewNew();
+        ControllerNew cRegNew = new ControllerNew(mRegNew,vRegNew);
+        
         controlCustomers = new ControlCustomers(modelCustomersNewEdit, viewCustomers, views);
         viewCustomers.setVisible(false);
         
         ViewMain vm = new ViewMain();
         ModelMain mm = new ModelMain();
         
-        Object controlsMain[] = new Object[5];
+        Object controlsMain[] = new Object[7];
         controlsMain[0] = cs;
         controlsMain[1] = controlCustomers;
         controlsMain[2] = controlSales;
         controlsMain[3] = controllerProducts;
         controlsMain[4] = controlShopping;
+        controlsMain[5] = cInSe;
+        controlsMain[6] = cRegNew;
         
         ControlMain cm = new ControlMain(mm, vm, controlsMain);
     }

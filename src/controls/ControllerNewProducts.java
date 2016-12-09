@@ -27,6 +27,10 @@ public class ControllerNewProducts implements  ActionListener{
       this.vnp.jtf_producto.addActionListener(this);
       this.vnp.jbtn_save.addActionListener(this);
       this.vnp.jbtn_back.addActionListener(this);
+      this.vnp.jtf_stock.addActionListener(this);
+      this.vnp.jtf_descuento.addActionListener(this);
+      this.vnp.jcb_descuento.addActionListener(this);
+      
       init_view();
       
     } 
@@ -36,6 +40,9 @@ public class ControllerNewProducts implements  ActionListener{
         this.vnp.jtf_precioCompra.setText("");
         this.vnp.jtf_precioVenta.setText("");
         this.vnp.jtf_producto.setText("");
+        this.vnp.jtf_descuento.setText("");
+        this.vnp.jtf_stock.setText("");
+        this.vnp.jcb_descuento.setSelectedIndex(0);
     }
     public void init_view(){
         this.vnp.setVisible(true);
@@ -44,11 +51,14 @@ public class ControllerNewProducts implements  ActionListener{
     public void nuevo(){
         int existencias = Integer.parseInt(this.vnp.jtf_existencias.getText());
         String descripcion = this.vnp.jta_descripcion.getText();
-        String precioCompra = this.vnp.jtf_precioCompra.getText();
-        String precioVenta = this.vnp.jtf_precioVenta.getText();
+        Double precioCompra = Double.parseDouble(this.vnp.jtf_precioCompra.getText());
+        Double precioVenta = Double.parseDouble(this.vnp.jtf_precioVenta.getText());
         String producto = this.vnp.jtf_producto.getText();
+        int descuento = Integer.parseInt(this.vnp.jtf_descuento.getText());
+        //String descuento = (String) this.vnp.jcb_descuento.getSelectedItem();
+        String stock = this.vnp.jtf_stock.getText();
         
-        String query = "Insert into productos (producto, descripcion, precio_compra, precio_venta, existencias)"+ "values('"+producto+"','"+descripcion+"','"+precioCompra+"','"+precioVenta+"','"+existencias+"');";
+        String query = "Insert into productos (producto, descripcion, precio_compra, precio_venta, existencias, stock, id_descuento)"+ "values('"+producto+"','"+descripcion+"','"+precioCompra+"','"+precioVenta+"','"+existencias+"','"+stock+"','"+descuento+"');";
         this.mnp.add(query);
         if(this.mnp.getErrores()==0){
             JOptionPane.showMessageDialog(vnp, "El producto se han guardado correctamente");

@@ -41,6 +41,11 @@ public class ViewNewProducts extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jbtn_save = new javax.swing.JButton();
         jbtn_back = new javax.swing.JButton();
+        id_dscuento = new javax.swing.JLabel();
+        jtf_descuento = new javax.swing.JTextField();
+        jl_stock = new javax.swing.JLabel();
+        jtf_stock = new javax.swing.JTextField();
+        jcb_descuento = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jta_descripcion = new javax.swing.JTextArea();
         jl_background = new javax.swing.JLabel();
@@ -64,13 +69,13 @@ public class ViewNewProducts extends javax.swing.JPanel {
             }
         });
         add(jtf_producto);
-        jtf_producto.setBounds(100, 120, 96, 20);
+        jtf_producto.setBounds(310, 70, 96, 20);
         add(jtf_precioCompra);
-        jtf_precioCompra.setBounds(350, 70, 56, 20);
+        jtf_precioCompra.setBounds(120, 140, 56, 20);
         add(jtf_precioVenta);
-        jtf_precioVenta.setBounds(350, 120, 56, 20);
+        jtf_precioVenta.setBounds(320, 130, 56, 20);
         add(jtf_existencias);
-        jtf_existencias.setBounds(370, 230, 53, 20);
+        jtf_existencias.setBounds(100, 190, 53, 20);
 
         jLabel2.setText("id_producto:");
         add(jLabel2);
@@ -78,23 +83,23 @@ public class ViewNewProducts extends javax.swing.JPanel {
 
         jLabel3.setText("Producto");
         add(jLabel3);
-        jLabel3.setBounds(20, 120, 60, 14);
+        jLabel3.setBounds(230, 70, 60, 14);
 
         jLabel4.setText("Descripcion");
         add(jLabel4);
-        jLabel4.setBounds(14, 150, 110, 14);
+        jLabel4.setBounds(20, 250, 110, 14);
 
         jLabel5.setText("Precio Compra");
         add(jLabel5);
-        jLabel5.setBounds(250, 70, 130, 14);
+        jLabel5.setBounds(20, 140, 130, 14);
 
         jLabel6.setText("Precio Venta");
         add(jLabel6);
-        jLabel6.setBounds(260, 130, 130, 14);
+        jLabel6.setBounds(230, 140, 130, 14);
 
         jLabel7.setText("Existencias");
         add(jLabel7);
-        jLabel7.setBounds(300, 230, 80, 14);
+        jLabel7.setBounds(30, 190, 80, 14);
 
         jbtn_save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/guardar.png"))); // NOI18N
         jbtn_save.setToolTipText("");
@@ -119,12 +124,28 @@ public class ViewNewProducts extends javax.swing.JPanel {
         add(jbtn_back);
         jbtn_back.setBounds(290, 300, 50, 50);
 
+        id_dscuento.setText("Descuento");
+        add(id_dscuento);
+        id_dscuento.setBounds(230, 190, 90, 14);
+        add(jtf_descuento);
+        jtf_descuento.setBounds(320, 180, 60, 20);
+
+        jl_stock.setText("Fecha de ingreso:");
+        add(jl_stock);
+        jl_stock.setBounds(210, 250, 100, 14);
+        add(jtf_stock);
+        jtf_stock.setBounds(310, 250, 90, 20);
+
+        jcb_descuento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0%", "5%", "10%", "25%", "30%", "30%", "50%", " " }));
+        add(jcb_descuento);
+        jcb_descuento.setBounds(320, 210, 48, 20);
+
         jta_descripcion.setColumns(20);
         jta_descripcion.setRows(5);
         jScrollPane1.setViewportView(jta_descripcion);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(20, 170, 240, 210);
+        jScrollPane1.setBounds(20, 280, 190, 110);
 
         jl_background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/produs2.jpg"))); // NOI18N
         jl_background.setText("jLabel8");
@@ -144,6 +165,7 @@ public class ViewNewProducts extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JLabel id_dscuento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -154,13 +176,17 @@ public class ViewNewProducts extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JButton jbtn_back;
     public javax.swing.JButton jbtn_save;
+    public javax.swing.JComboBox<String> jcb_descuento;
     private javax.swing.JLabel jl_background;
+    public javax.swing.JLabel jl_stock;
     public javax.swing.JPanel jp_size;
     public javax.swing.JTextArea jta_descripcion;
+    public javax.swing.JTextField jtf_descuento;
     public javax.swing.JTextField jtf_existencias;
     public javax.swing.JTextField jtf_idProducto;
     public javax.swing.JTextField jtf_precioCompra;
     public javax.swing.JTextField jtf_precioVenta;
     public javax.swing.JTextField jtf_producto;
+    public javax.swing.JTextField jtf_stock;
     // End of variables declaration//GEN-END:variables
 }

@@ -25,6 +25,8 @@ public class ControlMain implements ActionListener {
     ControllerProductos cProducts;
     ControlSales cSales;
     ControlShopping cShopping;
+    ControllerInSe cInSe;
+    ControllerNew cNew;
 
     public ControlMain(ModelMain modelMain, ViewMain viewMain, Object controls[]) {
         this.viewMain = viewMain;
@@ -38,6 +40,8 @@ public class ControlMain implements ActionListener {
         cSales = (ControlSales) controls[2];
         cProducts = (ControllerProductos) controls[3];
         cShopping = (ControlShopping) controls[4];
+        cInSe = (ControllerInSe) controls[5];
+        cNew = (ControllerNew) controls[6];
 
         this.viewMain.jmi_Customers.addActionListener(this);
         this.viewMain.jmi_suppliers.addActionListener(this);
@@ -58,12 +62,47 @@ public class ControlMain implements ActionListener {
         this.cs.cas.vas.jbtn_back.addActionListener(this);
         this.cShopping.vs.jbtn_addProduct.addActionListener(this);
         this.cProducts.cnp.vnp.jbtn_back.addActionListener(this);
+        this.viewMain.jm_inicio.addActionListener(this);
+        this.viewMain.jmi_InSe.addActionListener(this);
+        this.viewMain.jmi_regUsu.addActionListener(this);
+        this.viewMain.jmi_exit.addActionListener(this);
     }
 
     public void inView() {
         this.viewMain.setTitle("Principal");
         this.viewMain.setVisible(true);
         this.viewMain.setLocationRelativeTo(null);
+    }
+    public void mostrar(){
+        this.viewMain.jm_products.setVisible(false);
+        this.viewMain.jm_reports.setVisible(false);
+        this.viewMain.jm_sales.setVisible(false);
+        this.viewMain.jmi_Customers.setVisible(false);
+        this.viewMain.jm_suppliers.setVisible(false);
+        this.viewMain.jm_inicio.setVisible(true);
+        this.viewMain.jmi_regUsu.setVisible(false);
+        this.viewMain.jmi_exit.setVisible(false);
+    }
+    public void mostrarAdmin(){
+        this.viewMain.jm_products.setVisible(true);
+        this.viewMain.jm_reports.setVisible(true);
+        this.viewMain.jm_sales.setVisible(true);
+        this.viewMain.jmi_Customers.setVisible(true);
+        this.viewMain.jm_suppliers.setVisible(true);
+        this.viewMain.jm_inicio.setVisible(true);
+        this.viewMain.jmi_regUsu.setVisible(true);
+        this.viewMain.jmi_exit.setVisible(true);
+    }
+    
+    public void mostrarVendedor(){
+        this.viewMain.jm_products.setVisible(false);
+        this.viewMain.jm_reports.setVisible(false);
+        this.viewMain.jm_sales.setVisible(true);
+        this.viewMain.jmi_Customers.setVisible(false);
+        this.viewMain.jm_suppliers.setVisible(false);
+        this.viewMain.jm_inicio.setVisible(true);
+        this.viewMain.jmi_regUsu.setVisible(false);
+        this.viewMain.jmi_exit.setVisible(true);
     }
 
     public void inViewC() {
@@ -86,6 +125,20 @@ public class ControlMain implements ActionListener {
     public void products() {
         this.viewMain.setVisible(false);
         cProducts.init_view();
+    }
+    public void inSe() {
+        this.viewMain.setContentPane(cInSe.viewInSe);
+        this.viewMain.revalidate();
+        this.viewMain.repaint();
+        this.viewMain.setSize(cInSe.viewInSe.jp_InSe.getSize());
+        this.viewMain.setLocationRelativeTo(null);
+    }
+    public void usNew() {
+        this.viewMain.setContentPane(cNew.viewNew);
+        this.viewMain.revalidate();
+        this.viewMain.repaint();
+        this.viewMain.setSize(cNew.viewNew.jp_reg.getSize());
+        this.viewMain.setLocationRelativeTo(null);
     }
 
     public void sales() {
@@ -132,6 +185,10 @@ public class ControlMain implements ActionListener {
             inView();
         } else if (e.getSource() == this.viewMain.jmi_sales) {
             sales();
+        }else if (e.getSource() == this.viewMain.jmi_InSe) {
+            inSe();
+        }else if (e.getSource() == this.viewMain.jmi_regUsu) {
+            usNew();
         } else if (e.getSource().equals(this.cc.viewCustomers.jbtn_back)) {
             inViewC();
         } else if (e.getSource().equals(this.cSales.viewSales.jbtn_back)) {

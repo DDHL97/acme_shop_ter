@@ -25,6 +25,7 @@ public class ControllerProductos implements ActionListener {
     private Object controls[] = new Object[2];
     ControllerNewProducts cnp;//cas;
     ControllerEditProducts cep;//ces;
+    String precio_descuento = "";
     
     public ControllerProductos(ModelProducts modelProducts, ViewProducts viewProducts,Object controls[]){
         this.controls = controls;
@@ -54,6 +55,16 @@ public class ControllerProductos implements ActionListener {
         this.viewProducts.setVisible(true);
         this.viewProducts.setLocationRelativeTo(null);
         showData("Select * from productos");
+    }
+    
+    public void precio_descuento(){
+        try{
+        precio_descuento = ("select p.precio_venta, d.descuento, (p.precio_venta*d.descuento) as final_precio from productos p, descuentos d where p.id_descuento = d.id_descuento;");
+        rs = cb.query(precio_descuento);
+        rs.next();
+        }catch (Exception e){
+            
+        }
     }
     
     public void add(){
@@ -123,7 +134,7 @@ public class ControllerProductos implements ActionListener {
         try {
             rs = cb.query(query);
             while(rs.next()){
-                tblProducts.addRow(new Object[]{rs.getInt("id_producto"),rs.getString("producto"), rs.getString("descripcion"), rs.getString("precio_compra"), rs.getString("precio_venta"), rs.getString("existencias")});
+                tblProducts.addRow(new Object[]{rs.getInt("id_producto"),rs.getString("producto"), rs.getString("descripcion"), rs.getString("precio_compra"), rs.getString("precio_venta"), rs.getString("existencias"), rs.getString("stock"), rs.getString("id_descuento"),precio_descuento});
             }
         } catch (Exception e) {
             System.err.println(e.getMessage());

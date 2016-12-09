@@ -48,6 +48,8 @@ public void showEditableData(){
                 this.vep.jtf_precioComprae.setText(rs.getString("precio_compra"));
                 this.vep.jtf_precioVentae.setText(rs.getString("precio_venta"));
                 this.vep.jtf_existenciase.setText(rs.getString("existencias"));
+                this.vep.jtf_stocke.setText(rs.getString("stock"));
+                this.vep.jtf_descuentoe.setText(rs.getString("id_descuento"));
             }
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -60,7 +62,9 @@ public void showEditableData(){
         String precioVenta = this.vep.jtf_precioVentae.getText();
         String existencias = this.vep.jtf_existenciase.getText();
         String descripcion = this.vep.jta_descripcione.getText();
-        String query = "Update productos set producto ="+"'"+producto+"'"+", descripcion ="+"'"+descripcion+"'"+", precio_compra = " +"'"+precioCompra+"'"+", precio_venta = " +"'"+precioVenta +"'"+", existencias = "+"'"+existencias+"'"+" where id_producto = "+this.mep.getEditar();
+        String stock = this.vep.jtf_stocke.getText();
+        String descuento = this.vep.jtf_descuentoe.getText();
+        String query = "Update productos set producto ="+"'"+producto+"'"+", descripcion ="+"'"+descripcion+"'"+", precio_compra = " +"'"+precioCompra+"'"+", precio_venta = " +"'"+precioVenta +"'"+",stock ="+"'"+stock+"'"+",id_descuento ="+"'"+descuento+"' where id_producto = "+this.mep.getEditar();
         this.mep.add(query);
         if(this.mep.getErrores()==0)
             JOptionPane.showMessageDialog(vep, "Las modificaciones se han guardado correctamente");
